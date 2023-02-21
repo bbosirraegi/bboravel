@@ -1,17 +1,17 @@
 import React from 'react';
-import IndexRouter from './routes';
+import { Outlet } from 'react-router-dom';
 
-const App = () => {
+const MainLayout = () => {
   /* Router */
   /* State */
   /* Functions */
   /* Hooks */
   /* Render */
   return (
-    <div className="app-container">
-      <IndexRouter />
+    <div>
+      <Outlet />
     </div>
   );
 };
 
-export default App;
+export default MainLayout;
