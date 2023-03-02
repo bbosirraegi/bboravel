@@ -1,5 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import CenterTitle from './CenterTitle';
+import Header from './Header';
+import './main-layout.css';
+import SideContent from './SideContent';
 
 const MainLayout = () => {
   /* Router */
@@ -8,8 +12,17 @@ const MainLayout = () => {
   /* Hooks */
   /* Render */
   return (
-    <div>
-      <Outlet />
+    <div className="main-layout">
+      <div className="left">
+        <Header />
+      </div>
+      <div className="center">
+        <CenterTitle />
+        <Outlet />
+      </div>
+      <div className="right">
+        <SideContent />
+      </div>
     </div>
   );
 };
