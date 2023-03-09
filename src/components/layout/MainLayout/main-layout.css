@@ -9,6 +9,7 @@
 }
 
 .main-layout .left{
+    min-width: 144px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -61,13 +62,15 @@
 }
 
 .main-layout .left .header-container .navigation{
-    width: 100%;
+    width: 90%;
+    padding: 0 5%;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 
 .main-layout .left .header-container .profile{
     width: 90%;
@@ -89,17 +92,50 @@
 }
 
 .main-layout .left .header-container .navigation .navigation-item{
-    width: 900%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-right: 5%; */
-    text-align: right;
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 2;
-
+    margin: 5% 0;
 }
 
 .main-layout .left .header-container .navigation .navigation-item.link{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 2;
+    margin: 5% 0;
+    text-align: center;
     cursor: pointer;
+    border: none;
+}
+
+.main-layout .left .header-container .navigation .navigation-item .navigation-icon{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-layout .left .header-container .navigation .navigation-item .navigation-icon > span{
+    font-size: 2rem;
+}
+
+.main-layout .left .header-container .navigation .navigation-item .navigation-icon.active{
+    color: rgb(0 96 255/1);
+}
+
+.main-layout .left .header-container .navigation .navigation-item .navigation-title{
+    flex: 1;
+    text-align: left;
+    padding-left: 5%;
+    
+}
+
+.main-layout .left .header-container .navigation .navigation-item .navigation-title.active{
+    color: rgb(0 96 255/1);
 }
