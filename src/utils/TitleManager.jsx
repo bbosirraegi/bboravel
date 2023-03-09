@@ -21,6 +21,7 @@ export const NAVIGATION = [
     icon: <AiOutlineHome size={30} />,
     iconFill: <AiFillHome size={30} />,
     to: '/',
+    display: true,
   },
   {
     id: 1,
@@ -29,6 +30,7 @@ export const NAVIGATION = [
     icon: <AiOutlineMessage size={30} />,
     iconFill: <AiFillMessage size={30} />,
     to: '/topic',
+    display: true,
   },
   {
     id: 2,
@@ -37,11 +39,13 @@ export const NAVIGATION = [
     icon: <AiOutlineBell size={30} />,
     iconFill: <AiFillBell size={30} />,
     to: '/notification',
+    display: true,
   },
   {
     id: 3,
     title: '-',
     icon: '',
+    display: true,
   },
   {
     id: 4,
@@ -49,9 +53,19 @@ export const NAVIGATION = [
     icon: <AiOutlinePlusCircle size={30} />,
     iconFill: <AiFillPlusCircle size={30} />,
     to: '/write',
-    clicked: (callback) => {
-      if (callback) callback();
+    clicked: (c) => {
+      if (c) c();
     },
+    display: true,
+  },
+  {
+    id: 5,
+    title: '마이페이지',
+    centerTItle: '마이페이지',
+    icon: <AiOutlinePlusCircle size={30} />,
+    iconFill: <AiFillPlusCircle size={30} />,
+    to: '/mypage',
+    display: false,
   },
 ];
 

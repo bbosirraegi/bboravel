@@ -1,5 +1,5 @@
+import WriteLayout from 'components/layout/WriteLayout/WriteLayout';
 import React, { useEffect } from 'react';
-import WriteLayout from './components/layout/WriteLayout';
 import Loading from './components/Loading';
 import IndexRouter from './routes';
 import { useLoading } from './utils/LoadingManager';

@@ -12,6 +12,7 @@ const MainLayout = () => {
   /* Router */
   /* State */
   const [title, setTitle] = useState(<>커뮤니티</>);
+
   /* Functions */
   /* Hooks */
   useEffect(() => {

@@ -1,17 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NAVIGATION } from 'utils/TitleManager';
+import { useWrite } from 'utils/WriteManager';
 
 const Header = ({ pathname }) => {
   const navigate = useNavigate();
+  const { handleIsWrite } = useWrite();
   /* Router */
   /* State */
+  const navList = NAVIGATION.filter((item) => item.display);
   /* Functions */
   const handlePage = (item) => {
     const { to, clicked } = item;
     if (clicked) {
       clicked(() => {
-        console.log(1);
+        handleIsWrite(true);
       });
       return;
     }
@@ -20,7 +23,7 @@ const Header = ({ pathname }) => {
   /* Hooks */
 
   /* Render */
-  const navigation = NAVIGATION.map((item) => {
+  const navigation = navList.map((item) => {
     const { id, title, icon, iconFill, to } = item;
     const active = to === pathname;
     const i = active ? iconFill : icon;
