@@ -1,4 +1,4 @@
-.main-layout{
+.main-layout {
     width: 100%;
     min-width: 1220px;
     height: 100%;
@@ -6,45 +6,64 @@
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-.main-layout .left{
+.main-layout .left {
     min-width: 144px;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     border-right: 1px solid lightgray;
+    position: -webkit-sticky;
+    /* 사파리 브라우저 지원 */
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
-.main-layout .center{
+.main-layout .center {
     width: 680px;
     height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-layout .center .center-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.main-layout .center .center-title h1{
+    width: 90%;
+    height: 100%;
+    line-height: 3;
+}
+
+.main-layout .right {
+    width: 340px;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-right: 1px solid lightgray;
-    margin-right: 60px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    border-left: 1px solid lightgray;
 }
 
-.main-layout .center .center-title{
-    width: 90%;
-    height: 7%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.main-layout .right{
-    width: 340px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-layout .left .header-container{
+.main-layout .left .header-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -53,7 +72,7 @@
     flex-direction: column;
 }
 
-.main-layout .left .header-container .logo{
+.main-layout .left .header-container .logo {
     width: 90%;
     height: 10%;
     display: flex;
@@ -61,14 +80,14 @@
     align-items: center;
 }
 
-.main-layout .left .header-container .logo img{
+.main-layout .left .header-container .logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     cursor: pointer;
 }
 
-.main-layout .left .header-container .navigation{
+.main-layout .left .header-container .navigation {
     width: 90%;
     padding: 0 5%;
     flex: 1;
@@ -79,7 +98,7 @@
 }
 
 
-.main-layout .left .header-container .profile{
+.main-layout .left .header-container .profile {
     width: 90%;
     height: 10%;
     display: flex;
@@ -88,7 +107,7 @@
     cursor: pointer;
 }
 
-.main-layout .left .header-container .profile .profile-wrapper{
+.main-layout .left .header-container .profile .profile-wrapper {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -98,7 +117,7 @@
     border: 1px solid lightgray;
 }
 
-.main-layout .left .header-container .navigation .navigation-item{
+.main-layout .left .header-container .navigation .navigation-item {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -108,7 +127,7 @@
     margin: 5% 0;
 }
 
-.main-layout .left .header-container .navigation .navigation-item.link{
+.main-layout .left .header-container .navigation .navigation-item.link {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -121,28 +140,28 @@
     border: none;
 }
 
-.main-layout .left .header-container .navigation .navigation-item .navigation-icon{
+.main-layout .left .header-container .navigation .navigation-item .navigation-icon {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main-layout .left .header-container .navigation .navigation-item .navigation-icon > span{
+.main-layout .left .header-container .navigation .navigation-item .navigation-icon>span {
     font-size: 2rem;
 }
 
-.main-layout .left .header-container .navigation .navigation-item .navigation-icon.active{
+.main-layout .left .header-container .navigation .navigation-item .navigation-icon.active {
     color: rgb(0 96 255/1);
 }
 
-.main-layout .left .header-container .navigation .navigation-item .navigation-title{
+.main-layout .left .header-container .navigation .navigation-item .navigation-title {
     flex: 1;
     text-align: left;
     padding-left: 5%;
-    
+
 }
 
-.main-layout .left .header-container .navigation .navigation-item .navigation-title.active{
+.main-layout .left .header-container .navigation .navigation-item .navigation-title.active {
     color: rgb(0 96 255/1);
 }

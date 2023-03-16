@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { NAVIGATION } from 'utils/TitleManager';
 import { useWrite } from 'utils/WriteManager';
 import LOGO from 'assets/logo.png';
+import { Avatar } from 'components';
 
 const Header = ({ pathname }) => {
   const navigate = useNavigate();
@@ -48,7 +49,8 @@ const Header = ({ pathname }) => {
       </Link>
       <div className="navigation">{navigation}</div>
       <div className="profile">
-        <div className="profile-wrapper">O</div>
+        {/* <div className="profile-wrapper">O</div> */}
+        <Avatar />
       </div>
     </div>
   );
