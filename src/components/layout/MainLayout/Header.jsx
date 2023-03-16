@@ -1,7 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { NAVIGATION } from 'utils/TitleManager';
 import { useWrite } from 'utils/WriteManager';
+import LOGO from 'assets/logo.png';
 
 const Header = ({ pathname }) => {
   const navigate = useNavigate();
@@ -42,7 +43,9 @@ const Header = ({ pathname }) => {
   });
   return (
     <div className="header-container">
-      <div className="logo">BBORAVEL</div>
+      <Link to="/" className="logo">
+        <img src={LOGO} alt="logo" />
+      </Link>
       <div className="navigation">{navigation}</div>
       <div className="profile">
         <div className="profile-wrapper">O</div>
