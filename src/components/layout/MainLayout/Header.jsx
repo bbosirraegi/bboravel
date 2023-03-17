@@ -50,7 +50,12 @@ const Header = ({ pathname }) => {
       <div className="navigation">{navigation}</div>
       <div className="profile">
         {/* <div className="profile-wrapper">O</div> */}
-        <Avatar />
+        <Avatar
+          thumbnail={
+            'https://k.kakaocdn.net/dn/2c9oY/btreLfoCpPz/XMD19z0NbyiXCPKUjQPjhk/img_640x640.jpg'
+          }
+          char={'오경우'}
+        />
       </div>
     </div>
   );

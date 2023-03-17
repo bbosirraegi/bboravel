@@ -67,6 +67,16 @@ export const NAVIGATION = [
     to: '/mypage',
     display: false,
   },
+  {
+    id: 6,
+    title: '',
+    centerTItle: '커뮤니티',
+    icon: <AiOutlinePlusCircle size={30} />,
+    iconFill: <AiFillPlusCircle size={30} />,
+    to: '/community/',
+    display: false,
+    back: true,
+  },
 ];
 
 export const useTitle = () => {

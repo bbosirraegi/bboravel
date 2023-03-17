@@ -8,6 +8,7 @@ import {
   BsLink45Deg,
 } from 'react-icons/bs';
 import { MdLocationOn } from 'react-icons/md';
+import Album from './Album';
 import './card.css';
 import Tag from './Tag';
 
@@ -60,11 +61,12 @@ const Card = ({
             return <Tag key={idx} title={item} />;
           })}
         </div>
-        <div className="album">
-          {albums.map((item, idx) => {
+        {/* <div className="album"> */}
+        <Album album={albums} />
+        {/* {albums.map((item, idx) => {
             return <img src={item} alt={idx} key={idx} />;
-          })}
-        </div>
+          })} */}
+        {/* </div> */}
       </div>
       <div className="feedback">
         <div className="like">
@@ -98,10 +100,10 @@ Card.defaultProps = {
   location: '',
   tags: ['#콜롬비아'],
   albums: [
-    'https://s3-image.yeomi.travel/42b18165-665b-4b7e-894d-654a04950c33.jpeg?w=278&q=80',
-    'https://s3-image.yeomi.travel/bbacf561-0a59-4b4d-a4b5-bc42cd5f5ef6.jpeg?w=278&q=80',
+    // 'https://s3-image.yeomi.travel/42b18165-665b-4b7e-894d-654a04950c33.jpeg?w=278&q=80',
+    // 'https://s3-image.yeomi.travel/bbacf561-0a59-4b4d-a4b5-bc42cd5f5ef6.jpeg?w=278&q=80',
     'https://s3-image.yeomi.travel/e33a3669-4300-423a-9acc-683ea6925e87.jpeg?w=278&q=80',
-    'https://s3-image.yeomi.travel/8b592c53-1c3d-4e42-b11a-e793473a3341.jpeg?w=278&q=80',
+    // 'https://s3-image.yeomi.travel/8b592c53-1c3d-4e42-b11a-e793473a3341.jpeg?w=278&q=80',
   ],
   like: 3,
   reply: 5,

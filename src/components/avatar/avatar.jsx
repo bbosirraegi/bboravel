@@ -1,6 +1,6 @@
 import React from 'react';
 import './avatar.css';
-const avatar = ({ thumbnail, style, char }) => {
+const avatar = ({ thumbnail, char, style }) => {
   /* Router */
   /* State */
   const cc = char.length === 1 ? char : char.slice(0, 1);

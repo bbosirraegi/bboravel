@@ -33,7 +33,7 @@ const MainLayout = () => {
         <Header navigate={navigate} pathname={pathname} />
       </div>
       <div className="center">
-        <CenterTitle navigate={navigate} title={title} />
+        <CenterTitle navigate={navigate} title={title} back={true} />
         <Outlet />
       </div>
       <div className="right">
