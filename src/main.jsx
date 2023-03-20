@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import LoadingManager from './utils/LoadingManager';
 import WriteManager from './utils/WriteManager';
 import { IconContext } from 'react-icons';
+import 'moment/dist/locale/ko';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

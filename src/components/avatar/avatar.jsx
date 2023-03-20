@@ -1,6 +1,6 @@
 import React from 'react';
 import './avatar.css';
-const avatar = ({ thumbnail, char, style }) => {
+const avatar = ({ thumbnail, char, style, action }) => {
   /* Router */
   /* State */
   const cc = char.length === 1 ? char : char.slice(0, 1);
@@ -8,7 +8,7 @@ const avatar = ({ thumbnail, char, style }) => {
   /* Hooks */
   /* Render */
   return (
-    <div className="avatar" {...style}>
+    <div className="avatar" {...style} onClick={action}>
       {thumbnail ? <img src={thumbnail} alt={char} /> : cc}
     </div>
   );

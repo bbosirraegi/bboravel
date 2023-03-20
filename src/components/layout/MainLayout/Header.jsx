@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { NAVIGATION } from 'utils/TitleManager';
 import { useWrite } from 'utils/WriteManager';
 import LOGO from 'assets/logo.png';
 import { Avatar } from 'components';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from 'utils/firebase';
 
 const Header = ({ pathname }) => {
   const navigate = useNavigate();
   const { handleIsWrite } = useWrite();
   /* Router */
   /* State */
+  const [userObj, setUserObj] = useState(null);
   const navList = NAVIGATION.filter((item) => item.display);
   /* Functions */
   const handlePage = (item) => {
@@ -22,7 +25,28 @@ const Header = ({ pathname }) => {
     }
     navigate(to);
   };
+
+  const handleLogin = async () => {
+    const provider = new GoogleAuthProvider();
+    await signInWithPopup(auth, provider);
+  };
+
   /* Hooks */
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserObj({
+          user_nm: user.displayName,
+          user_id: user.uid,
+          thumbnail: user.photoURL,
+          updateProfile: (args) => user.updateProfile(args),
+        });
+      } else {
+        setUserObj(null);
+      }
+    });
+  }, []);
 
   /* Render */
   const navigation = navList.map((item) => {
@@ -49,13 +73,15 @@ const Header = ({ pathname }) => {
       </Link>
       <div className="navigation">{navigation}</div>
       <div className="profile">
-        {/* <div className="profile-wrapper">O</div> */}
-        <Avatar
-          thumbnail={
-            'https://k.kakaocdn.net/dn/2c9oY/btreLfoCpPz/XMD19z0NbyiXCPKUjQPjhk/img_640x640.jpg'
-          }
-          char={'오경우'}
-        />
+        {userObj ? (
+          <Avatar
+            thumbnail={userObj.thumbnail}
+            char={userObj.user_nm}
+            action={userObj.updateProfile}
+          />
+        ) : (
+          <div onClick={handleLogin}>로그인</div>
+        )}
       </div>
     </div>
   );

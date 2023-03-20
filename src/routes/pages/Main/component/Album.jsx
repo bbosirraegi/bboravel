@@ -12,7 +12,7 @@ const Album = ({ album }) => {
   return (
     <div className={`album${w !== 0 ? `-${w}` : ''}`}>
       {album.map((item) => {
-        return <img src={item} alt="1" />;
+        return <img key={item} src={item} alt="1" />;
       })}
     </div>
   );

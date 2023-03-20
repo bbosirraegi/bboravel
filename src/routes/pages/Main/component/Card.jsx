@@ -1,4 +1,5 @@
 import { Avatar } from 'components';
+import moment from 'moment';
 import React from 'react';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import {
@@ -11,6 +12,8 @@ import { MdLocationOn } from 'react-icons/md';
 import Album from './Album';
 import './card.css';
 import Tag from './Tag';
+
+import 'moment/locale/ko';
 
 const Card = ({
   writer,
@@ -26,6 +29,7 @@ const Card = ({
   /* Router */
   /* State */
   const { user_nm, user_thumbnail } = writer;
+  const { seconds } = timestamp;
   /* Functions */
   /* Hooks */
   /* Render */
@@ -48,7 +52,11 @@ const Card = ({
               </>
             )}
 
-            <span className="timestamp">{timestamp}</span>
+            <span className="timestamp">
+              {moment(seconds * 1000)
+                .startOf('day')
+                .fromNow()}
+            </span>
           </div>
         </div>
         <div className="options">...</div>
