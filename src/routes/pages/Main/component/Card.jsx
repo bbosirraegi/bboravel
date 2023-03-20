@@ -37,7 +37,7 @@ const Card = ({
     <div className="card-container">
       <div className="writer">
         <div className="avatar-wrapper">
-          <Avatar thumbnail={user_thumbnail} char={'0'} />
+          <Avatar thumbnail={user_thumbnail} char={user_nm} />
         </div>
         <div className="w-wrapper">
           <div className="name">{user_nm}</div>

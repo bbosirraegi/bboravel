@@ -266,4 +266,14 @@ $RECYCLE.BIN/
 *_LOCAL_*.txt
 *_REMOTE_*.txt
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
+
 # End of https://www.toptal.com/developers/gitignore/api/react,node,dotenv,visualstudiocode,windows,macos,linux

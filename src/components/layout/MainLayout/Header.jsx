@@ -40,7 +40,6 @@ const Header = ({ pathname }) => {
           user_nm: user.displayName,
           user_id: user.uid,
           thumbnail: user.photoURL,
-          updateProfile: (args) => user.updateProfile(args),
         });
       } else {
         setUserObj(null);
@@ -74,11 +73,7 @@ const Header = ({ pathname }) => {
       <div className="navigation">{navigation}</div>
       <div className="profile">
         {userObj ? (
-          <Avatar
-            thumbnail={userObj.thumbnail}
-            char={userObj.user_nm}
-            action={userObj.updateProfile}
-          />
+          <Avatar thumbnail={userObj.thumbnail} char={userObj.user_nm} />
         ) : (
           <div onClick={handleLogin}>로그인</div>
         )}
