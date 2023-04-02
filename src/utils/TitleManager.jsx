@@ -22,6 +22,7 @@ export const NAVIGATION = [
     iconFill: <AiFillHome size={30} />,
     to: '/',
     display: true,
+    back: false,
   },
   {
     id: 1,
@@ -31,6 +32,7 @@ export const NAVIGATION = [
     iconFill: <AiFillMessage size={30} />,
     to: '/topic',
     display: true,
+    back: true,
   },
   {
     id: 2,
@@ -40,6 +42,7 @@ export const NAVIGATION = [
     iconFill: <AiFillBell size={30} />,
     to: '/notification',
     display: true,
+    back: true,
   },
   {
     id: 3,

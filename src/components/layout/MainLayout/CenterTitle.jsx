@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoArrowBackCircle } from 'react-icons/io5';
+import { BsArrowLeft } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 
 const CenterTitle = ({ title, back }) => {
@@ -16,7 +16,12 @@ const CenterTitle = ({ title, back }) => {
   return (
     <div className="center-title">
       <h1>
-        {back && <IoArrowBackCircle onClick={handleBack} />}
+        {back && (
+          <>
+            <BsArrowLeft onClick={handleBack} style={{ cursor: 'pointer' }} />
+            &nbsp;
+          </>
+        )}
         {title}
       </h1>
     </div>

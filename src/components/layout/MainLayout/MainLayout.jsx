@@ -22,7 +22,7 @@ const MainLayout = () => {
         return to === pathname;
       });
 
-      setTitle(temp.centerTItle);
+      setTitle(temp);
     }
   }, [pathname]);
 
@@ -33,7 +33,11 @@ const MainLayout = () => {
         <Header navigate={navigate} pathname={pathname} />
       </div>
       <div className="center">
-        <CenterTitle navigate={navigate} title={title} back={true} />
+        <CenterTitle
+          navigate={navigate}
+          title={title.centerTItle}
+          back={title.back}
+        />
         <Outlet />
       </div>
       <div className="right">

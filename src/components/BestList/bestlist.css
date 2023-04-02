@@ -1,0 +1,65 @@
+.best-list-container{
+    width: 100%;
+    min-height: 300px;
+}
+
+.best-list-container .best-header{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.best-list-container .best-wrapper{
+    width: 100%;
+    min-height: 100px;
+}
+
+.best-list-container .best-wrapper .best-item{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+
+.best-list-container .best-wrapper .best-item:last-child{
+    border-bottom: none;
+}
+
+.best-list-container .best-wrapper .best-item .best-text{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.best-list-container .best-wrapper .best-item .best-text .best-title{
+    width: 95%;
+    min-height: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+}
+
+.best-list-container .best-wrapper .best-item .best-text .best-content{
+    width: 95%;
+    flex: 1;
+    font-size: 0.825rem;
+}
+
+.best-list-container .best-wrapper .best-item .best-img{
+    width: 84px;
+    height: 84px;
+}
+
+.best-list-container .best-wrapper .best-item .best-img img{
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+}
