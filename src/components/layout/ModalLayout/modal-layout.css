@@ -1,4 +1,4 @@
-.write-layout-container {
+.modal-layout-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -10,9 +10,9 @@
 }
 
 
-.write-layout-container .write-box {
+.modal-layout-container .modal-box {
     min-width: 560px;
-    max-height: calc(100vh - 240px);
+    /* max-height: calc(100vh - 240px); */
     background-color: white;
     border-radius: 30px;
     display: flex;
@@ -24,7 +24,7 @@
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.write-layout-container .write-box .header {
+.modal-layout-container .modal-box .header {
     width: 100%;
     min-height: 50px;
     --tw-text-opacity: 1;
@@ -35,12 +35,11 @@
     color: rgb(22 25 29/var(--tw-text-opacity));
 }
 
-.write-layout-container .write-box .body {
+.modal-layout-container .modal-box .body {
     width: 100%;
-    max-height: 600px;
 }
 
-.write-layout-container .write-box .body .select-wrapper{
+.modal-layout-container .modal-box .body .select-wrapper{
     width: 100%;
     height: 100%;
     display: flex;
@@ -49,7 +48,7 @@
     flex-direction: column;
 }
 
-.write-layout-container .write-box .body .select-wrapper .select-box{
+.modal-layout-container .modal-box .body .select-wrapper .select-box{
     width: 100%;
     height: 150px;
     display: flex;
@@ -57,7 +56,7 @@
     align-items: center;
 }
 
-.write-layout-container .write-box .body .select-wrapper .select-box .card{
+.modal-layout-container .modal-box .body .select-wrapper .select-box .card{
     height: 80%;
     width: 45%;
     border: 1px solid lightgray;
@@ -68,7 +67,7 @@
     flex-direction: column;
 }
 
-.write-layout-container .write-box .body .select-wrapper .select-description{
+.modal-layout-container .modal-box .body .select-wrapper .select-description{
     width: 100%;
     height: 150px;
     display: flex;
@@ -77,7 +76,7 @@
     text-align: center;
 }
 
-.write-layout-container .write-box .body .select-wrapper .select-thumbnail{
+.modal-layout-container .modal-box .body .select-wrapper .select-thumbnail{
     width: 100%;
     min-height: 300px;
     flex: 1;
@@ -86,6 +85,6 @@
     align-items: flex-end;
 }
 
-.write-layout-container .write-box .body .select-wrapper .select-thumbnail img{
+.modal-layout-container .modal-box .body .select-wrapper .select-thumbnail img{
     object-fit: contain;
 }

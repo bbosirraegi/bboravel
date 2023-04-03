@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { NAVIGATION } from 'utils/TitleManager';
+import { NAVIGATION, useTitle } from 'utils/TitleManager';
 import CenterTitle from './CenterTitle';
 import Header from './Header';
 import './main-layout.css';
 import SideContent from './SideContent';
+import { useLoading } from 'utils/LoadingManager';
 
 const MainLayout = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { handleLoadingTimer } = useLoading();
+  // const {} = useTitle();
   /* Router */
   /* State */
   const [title, setTitle] = useState(<>커뮤니티</>);
@@ -16,9 +19,14 @@ const MainLayout = () => {
   /* Functions */
   /* Hooks */
   useEffect(() => {
+    handleLoadingTimer(1000);
     if (pathname) {
+      const [, ...cond] = pathname.split('/');
       const [temp] = NAVIGATION.filter((item) => {
         const { to } = item;
+        if (cond.length >= 2) {
+          return pathname.includes(to);
+        }
         return to === pathname;
       });
 

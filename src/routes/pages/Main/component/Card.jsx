@@ -14,8 +14,10 @@ import './card.css';
 import Tag from './Tag';
 
 import 'moment/locale/ko';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Card = ({
+  id,
   writer,
   location,
   timestamp,
@@ -27,10 +29,25 @@ const Card = ({
   reply,
 }) => {
   /* Router */
+  const navigate = useNavigate();
   /* State */
   const { user_nm, user_thumbnail } = writer;
   const { seconds } = timestamp;
+  const _content =
+    content.length >= 90 ? (
+      <>
+        {content.slice(0, 90)}{' '}
+        <Link style={{ color: 'lightgray' }} to={`/community/${id}`}>
+          ... 더보기
+        </Link>
+      </>
+    ) : (
+      content
+    );
   /* Functions */
+  const handleDetail = () => {
+    navigate(`/community/${id}`);
+  };
   /* Hooks */
   /* Render */
   return (
@@ -63,7 +80,7 @@ const Card = ({
       </div>
       <div className="content">
         <div className="title">{title}</div>
-        <div className="community-content">{content}</div>
+        <div className="community-content">{_content}</div>
         <div className="tag">
           {tags.map((item, idx) => {
             return <Tag key={idx} title={item} />;
@@ -79,12 +96,12 @@ const Card = ({
       <div className="feedback">
         <div className="like">
           <AiOutlineHeart size={25} />
-          <div className="cnt">{like}</div>
+          <div className="cnt">{like.length ? like.length : 0}</div>
           {/* <AiFillHeart size={30} /> */}
         </div>
-        <div className="reply">
+        <div className="reply" onClick={handleDetail}>
           <BsChat size={20} />
-          <div className="cnt">{reply}</div>
+          <div className="cnt">{reply.length ? reply.length : 0}</div>
         </div>
         <div className="space"></div>
         <div className="share">

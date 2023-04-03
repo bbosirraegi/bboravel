@@ -31,8 +31,6 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin-right: 60px;
-    border-right: 1px solid lightgray;
 }
 
 .main-layout .center .center-title {
@@ -167,6 +165,8 @@
     position: sticky;
     left: 0;
     top: 0;
+    padding-left: 60px;
+    border-left: 1px solid lightgray;
 }
 
 .main-layout .right .sidebar-container{

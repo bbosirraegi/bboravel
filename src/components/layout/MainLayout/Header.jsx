@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { NAVIGATION } from 'utils/TitleManager';
 import { useWrite } from 'utils/WriteManager';
@@ -6,13 +6,14 @@ import LOGO from 'assets/logo.png';
 import { Avatar } from 'components';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from 'utils/firebase';
+import { useSession } from 'utils/SessionManager';
 
 const Header = ({ pathname }) => {
   const navigate = useNavigate();
   const { handleIsWrite } = useWrite();
+  const { session } = useSession();
   /* Router */
   /* State */
-  const [userObj, setUserObj] = useState(null);
   const navList = NAVIGATION.filter((item) => item.display);
   /* Functions */
   const handlePage = (item) => {
@@ -32,21 +33,6 @@ const Header = ({ pathname }) => {
   };
 
   /* Hooks */
-
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setUserObj({
-          user_nm: user.displayName,
-          user_id: user.uid,
-          thumbnail: user.photoURL,
-        });
-      } else {
-        setUserObj(null);
-      }
-    });
-  }, []);
-
   /* Render */
   const navigation = navList.map((item) => {
     const { id, title, icon, iconFill, to } = item;
@@ -72,8 +58,8 @@ const Header = ({ pathname }) => {
       </Link>
       <div className="navigation">{navigation}</div>
       <div className="profile">
-        {userObj ? (
-          <Avatar thumbnail={userObj.thumbnail} char={userObj.user_nm} />
+        {session ? (
+          <Avatar thumbnail={session.thumbnail} char={session.user_nm} />
         ) : (
           <div onClick={handleLogin}>로그인</div>
         )}

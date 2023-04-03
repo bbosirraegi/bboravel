@@ -7,16 +7,19 @@ import LoadingManager from './utils/LoadingManager';
 import WriteManager from './utils/WriteManager';
 import { IconContext } from 'react-icons';
 import 'moment/dist/locale/ko';
+import SessionManager from 'utils/SessionManager';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
-        <LoadingManager>
-          <WriteManager>
-            <App />
-          </WriteManager>
-        </LoadingManager>
+        <SessionManager>
+          <LoadingManager>
+            <WriteManager>
+              <App />
+            </WriteManager>
+          </LoadingManager>
+        </SessionManager>
       </IconContext.Provider>
     </Router>
   </React.StrictMode>
